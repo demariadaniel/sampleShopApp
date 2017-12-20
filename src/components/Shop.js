@@ -38,9 +38,6 @@ class Shop extends Component {
                 <Link to={this.props.match.path + "/hats"}>
                     <button>Hats</button>
                 </Link>
-                <Link to={this.props.match.path + "/cart"}>
-                    <button>Cart</button>
-                </Link>
                 <div>
                     <Switch>
                         <Route
@@ -53,10 +50,8 @@ class Shop extends Component {
                             render={() => {
                                 return <Hats addtoCart={this.addtoCart} />
                             }} />
-                        <Route path={this.props.match.path + "/cart"} render={() => {
-                            return <Cart cart={this.state.cart} />
-                        }} />
                     </Switch>
+                    <Cart cart={this.state.cart} />
                 </div>
             </div>
         )
